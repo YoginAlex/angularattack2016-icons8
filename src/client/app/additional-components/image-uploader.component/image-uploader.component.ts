@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FORM_DIRECTIVES } from '@angular/common';
 
-import { ClassifyApi } from '../../shared/services/classify-api.service'
+import { UploadedImageService } from '../../shared/services/uploaded-image.service'
+import { ClassifyApi } from "../../shared/services/classify-api.service";
 
 //Just need for TS Compiler
 interface FileReaderEventTarget extends EventTarget {
@@ -12,17 +13,16 @@ interface FileReaderEvent extends Event {
   getMessage():string;
 }
 
-
 @Component({
   selector: 'upload-form',
   templateUrl: '/app/additional-components/image-uploader.component/image-uploader.template.html',
-  providers: [ClassifyApi]
+  providers: [UploadedImageService, ClassifyApi]
 })
 export class ImageUploader{
   imagePreviewUrl: string;
 
   constructor(
-    private classifyService: ClassifyApi
+    private uploadedImage: UploadedImageService
   ) {}
   
   uploadImage(image: any){
@@ -34,7 +34,8 @@ export class ImageUploader{
 
     if (image.files[0]) {
       imageReader.readAsDataURL(image.files[0]);
-      this.classifyService.getClassify(image.files[0]);
+      //TODO: Preloader показывать
+      this.uploadedImage.upload(image.files[0]);
     }
   }
 }

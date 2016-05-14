@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { UploadedImageService } from './uploaded-image.service'
+import { Score } from "../scores";
 
 @Injectable()
 export class ClassifyApi {
@@ -8,11 +9,13 @@ export class ClassifyApi {
 
   private classifyUrl = 'https://fizpatrick.herokuapp.com/api/classify';
 
-  getClassify(image: File) {
-    this.makeFileRequest(this.classifyUrl, [], image).then((result) => {
-      console.log(result);
+  public getClassify(image: File) {
+    return this.makeFileRequest(this.classifyUrl, [], image).then((result: any) => {
+      console.log('Classify result', result);
+      return result.images[0].scores.map(item => new Score(item));
     }, (error) => {
-      console.log('ERRRORRR', error);
+      console.log('Error uploading Image', error);
+      return [];
     });
   }
 
@@ -22,11 +25,8 @@ export class ClassifyApi {
         formData: any = new FormData(),
         xhr = new XMLHttpRequest();
 
-      formData.append("photo[]", file, file.name);
-
-      console.log('file', file);
-      console.log('formData', formData);
-
+      formData.append("photo", file, file.name);
+      
       xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
           if (xhr.status == 200) {
@@ -41,6 +41,4 @@ export class ClassifyApi {
       xhr.send(formData);
     });
   }
-
-
 }

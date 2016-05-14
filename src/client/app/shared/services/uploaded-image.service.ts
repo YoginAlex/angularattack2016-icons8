@@ -1,15 +1,18 @@
-export class UploadedImageService {
-  names = [
-    'Edsger Dijkstra',
-    'Donald Knuth',
-    'Alan Turing',
-    'Grace Hopper'
-  ];
+import { Injectable } from '@angular/core';
 
-  get(): string[] {
-    return this.names;
-  }
-  add(value: string): void {
-    this.names.push(value);
+import { ClassifyApi } from './classify-api.service'
+import {Score} from "../scores";
+
+@Injectable()
+export class UploadedImageService {
+  private scores: Array<Score>;
+
+  constructor(
+    private classifyApi: ClassifyApi
+  ){}
+  
+  public upload(image: File): void {
+    this.classifyApi.getClassify(image)
+      .then((scores) => this.scores = scores);
   }
 }
