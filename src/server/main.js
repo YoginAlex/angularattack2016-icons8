@@ -12,7 +12,7 @@ var visual_recognition = watson.visual_recognition({
 });
 
 var params = {
-  images_file: fs.createReadStream('./images.jpg')
+  images_file: fs.createReadStream('./src/server/images.jpg')
 };
 
 
@@ -29,6 +29,6 @@ app.get('/', function (req, res) {
   res.send('hello world');
 });
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+app.listen(process.env.PORT || 5000, function () {
+  console.log('Example app listening on port 5000!');
 });
