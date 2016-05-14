@@ -1,4 +1,4 @@
-export class NameListService {
+export class UploadedImageService {
   names = [
     'Edsger Dijkstra',
     'Donald Knuth',
