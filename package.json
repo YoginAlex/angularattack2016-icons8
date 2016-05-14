@@ -112,6 +112,8 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "walk": "^2.3.9",
+    "multiparty": "4.1.2",
+    "body-parser": "1.12.4",
     "yargs": "^4.2.0"
   },
   "dependencies": {
