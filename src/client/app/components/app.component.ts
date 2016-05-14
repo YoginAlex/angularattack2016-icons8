@@ -6,7 +6,7 @@ import { UploadedImageService } from '../shared/index';
 
 @Component({
   selector: 'sd-app',
-  viewProviders: [UploadedImageService],
+  // viewProviders: [UploadedImageService],
   templateUrl: 'app/components/app.component.html',
   directives: [ROUTER_DIRECTIVES, HomeComponent],
   styleUrls: ['app/components/app.component.css']

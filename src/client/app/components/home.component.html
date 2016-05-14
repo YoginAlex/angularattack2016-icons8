@@ -1,5 +1,9 @@
 <p>Hello! </p>
 
-<upload-form></upload-form>
+<image-uploader [image]="mainImage">
+</image-uploader>
 
-<skin-type-icon></skin-type-icon>
+<skin-type-icon
+    *ngIf="mainImage"
+    [image]="mainImage">
+</skin-type-icon>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, Input } from '@angular/core';
 import { FORM_DIRECTIVES } from '@angular/common';
 
 import { UploadedImageService } from '../../shared/services/uploaded-image.service'
@@ -14,12 +14,13 @@ interface FileReaderEvent extends Event {
 }
 
 @Component({
-  selector: 'upload-form',
+  selector: 'image-uploader',
   templateUrl: '/app/additional-components/image-uploader.component/image-uploader.template.html',
   providers: [UploadedImageService, ClassifyApi]
 })
-export class ImageUploader{
-  imagePreviewUrl: string;
+export class ImageUploader {
+  private imagePreviewUrl: string;
+  @Output() public mainImage;
 
   constructor(
     private uploadedImage: UploadedImageService
@@ -35,7 +36,10 @@ export class ImageUploader{
     if (image.files[0]) {
       imageReader.readAsDataURL(image.files[0]);
       //TODO: Preloader показывать
-      this.uploadedImage.upload(image.files[0]);
+      this.uploadedImage.upload(image.files[0]).then((scores) => {
+        console.log('scores', scores);
+        this.mainImage.scores = scores;
+      });
     }
   }
 }

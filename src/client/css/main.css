@@ -61,3 +61,8 @@ button {
 button:hover {
   background-color: #28739e;
 }
+
+img {
+  width: 100px;
+  height: 100px;
+}
