@@ -1,9 +1,9 @@
-<p>Hello! </p>
-
-<image-uploader [mainImage]="mainImage">
+<image-uploader
+    [mainImage]="mainImage">
 </image-uploader>
 
-<skin-type-icon *ngIf="mainImage.scores"
+<skin-type-icon
+    *ngIf="mainImage.scores"
     [scores]="mainImage.scores">
 </skin-type-icon>
 

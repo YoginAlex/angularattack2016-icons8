@@ -1,6 +1,16 @@
 
-<div>
-  <input type="file" (change)="uploadImage(image)" #image />
+<div class="c-upload-block">
+  <input
+    type="file"
+    (change)="uploadImage(image)"
+    accept="image/*"
+    #image
+  />
+  <button
+    class="c-button"
+    (click)="clickForUpload($event)">
+    Upload Your Photo
+  </button>
 </div>
 
 <img src='{{ imagePreviewUrl }}' alt=""/>

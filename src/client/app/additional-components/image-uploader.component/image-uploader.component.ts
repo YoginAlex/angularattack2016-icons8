@@ -1,4 +1,4 @@
-import { Component, Output, Input } from '@angular/core';
+import { Component, Output, Input, Renderer } from '@angular/core';
 import { FORM_DIRECTIVES } from '@angular/common';
 
 import { UploadedImageService } from '../../shared/services/uploaded-image.service'
@@ -13,9 +13,14 @@ interface FileReaderEvent extends Event {
   getMessage():string;
 }
 
+
 @Component({
   selector: 'image-uploader',
   templateUrl: '/app/additional-components/image-uploader.component/image-uploader.template.html',
+  styleUrls: [
+    'css/main-classes.css',
+    'app/additional-components/image-uploader.component/image-uploader.component.css'
+  ],
   providers: [UploadedImageService, ClassifyApi]
 })
 export class ImageUploader {
@@ -25,10 +30,10 @@ export class ImageUploader {
   constructor(
     private uploadedImage: UploadedImageService
   ) {}
-  
-  uploadImage(image: any){
-    let imageReader = new FileReader();
 
+  uploadImage(image: any){
+    let
+      imageReader = new FileReader();
     imageReader.addEventListener('load', (event: FileReaderEvent) => {
       this.imagePreviewUrl = event.target.result;
     }, false);
@@ -42,4 +47,10 @@ export class ImageUploader {
       });
     }
   }
+
+  clickForUpload(event) {
+    event.preventDefault();
+    event.target.parentNode.children[0].click(); //SuppaDuppa Monkey HacK! It's Since Biach!
+  }
+  
 }

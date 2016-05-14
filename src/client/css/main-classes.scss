@@ -9,3 +9,22 @@
   margin: 2rem auto;
   text-align: center;
 }
+
+.c-text-block {
+  display: block;
+  color: $main-text-color;
+  font-weight: lighter;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.c-link {
+  color: $main-link-color;
+  text-decoration: none;
+  transition: border 250ms ease-in-out;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    border-color: $main-link-color;
+  }
+}

@@ -2,12 +2,26 @@
 
 .c-button {
   display: inline-block;
-  background: $button-color;
+  position: relative;
+  background-color: $button-color;
+  border: none;
   border-radius: 5px;
-
-  line-height: 21;
+  height: 47px;
+  line-height: 21px;
   font-size: 18px;
   color: white;
+  padding: 0 1.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 250ms ease-in-out;
+
+  &:hover {
+    background-color: lighten($button-color, 10%);
+  }
+
+  &:focus {
+    outline:0;
+  }
 
   .m-positive {
     background: $button-color-positive;
