@@ -3,9 +3,9 @@ import { FORM_DIRECTIVES } from '@angular/common';
 
 @Component({
   selector: 'upload-form',
-  templateUrl: ''
+  templateUrl: '/app/additional-components/image-uploader.component/image-uploader.template.html'
 })
-export class ImageUplader{
+export class ImageUploader{
   constructor () {
     
   }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES, Routes } from '@angular/router';
 
-import { HomeComponent } from 'home.component';
+import { HomeComponent } from './home.component';
 import { UploadedImageService } from '../shared/index';
 
 @Component({
