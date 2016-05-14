@@ -1,4 +1,4 @@
-Icons8 hackaton
+Icons8 hackaton -  Fitzpatrick
 
 # How to start
 
