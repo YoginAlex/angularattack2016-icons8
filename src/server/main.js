@@ -1,8 +1,20 @@
 var express = require('express');
 var fs = require('fs');
-var app = express();
+var bodyParser = require('body-parser');
 var watson = require('watson-developer-cloud');
 
+var util = require('util')
+
+var multiparty = require('multiparty');
+
+var app = express();
+
+var port = process.env.PORT || 5000;
+
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+
+var router = express.Router();
 
 var visual_recognition = watson.visual_recognition({
   password: "gTOuIHgRlFct",
@@ -11,24 +23,37 @@ var visual_recognition = watson.visual_recognition({
   version_date: '2015-12-02'
 });
 
-var params = {
-  images_file: fs.createReadStream('./src/server/images.jpg')
-};
+
+router.post('/classify', function (req, res) {
+  var form = new multiparty.Form();
+
+  console.log(req.files);
+
+  form.parse(req, function(err, fields, files) {
+    console.log(files);
+    var params = {
+      images_file: fs.createReadStream(files.photo[0].path)
+    };
 
 
-visual_recognition.classify(params,
-  function (err, response) {
-    if (err)
-      console.log(err);
-    else
-      console.log(JSON.stringify(response, null, 2));
+    visual_recognition.classify(params,
+      function (err, response) {
+        if (err) {
+          res.json({error: err});
+        }
+        else {
+          res.json(response);
+        }
+      });
+
+
   });
 
-// respond with "hello world" when a GET request is made to the homepage
-app.get('/', function (req, res) {
-  res.send('hello world');
+
+ 
+
 });
 
-app.listen(process.env.PORT || 5000, function () {
-  console.log('Example app listening on port 5000!');
-});
+app.use('/api', router);
+
+app.listen(port);
