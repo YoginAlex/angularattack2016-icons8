@@ -66,3 +66,8 @@ img {
   width: 100px;
   height: 100px;
 }
+
+sd-app {
+  display: block;
+  margin: 20% auto;
+}

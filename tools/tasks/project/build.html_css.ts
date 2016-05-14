@@ -31,27 +31,32 @@ function prepareTemplates() {
     .pipe(gulp.dest(TMP_DIR));
 }
 
-function processComponentCss() {
+function processComponentScss() {
   return gulp.src([
-      join(APP_SRC, '**', '*.css'),
-      '!' + join(APP_SRC, 'assets', '**', '*.css')
+      join(APP_SRC, '**', '*.scss'),
+      '!' + join(APP_SRC, 'assets', '**', '*.scss')
     ])
-    .pipe(isProd ? plugins.cached('process-component-css') : plugins.util.noop())
+    .pipe(isProd ? plugins.cached('process-component-scss') : plugins.util.noop())
+    .pipe(isProd ? plugins.progeny() : plugins.util.noop())
+    .pipe(plugins.sourcemaps.init())
+    .pipe(plugins.sass({includePaths: ['./node_modules/']}).on('error', plugins.sass.logError))
     .pipe(plugins.postcss(processors))
+    .pipe(plugins.sourcemaps.write(isProd ? '.' : ''))
     .pipe(gulp.dest(isProd ? TMP_DIR: APP_DEST));
 }
 
-function processExternalCss() {
-  return gulp.src(getExternalCss().map(r => r.src))
-    .pipe(isProd ? plugins.cached('process-external-css') : plugins.util.noop())
+function processExternalScss() {
+  return gulp.src(getExternalScss().map(r => r.src))
+    .pipe(isProd ? plugins.cached('process-external-scss') : plugins.util.noop())
+    .pipe(isProd ? plugins.progeny() : plugins.util.noop())
+    .pipe(plugins.sourcemaps.init())
+    .pipe(plugins.sass({includePaths: ['./node_modules/']}).on('error', plugins.sass.logError))
     .pipe(plugins.postcss(processors))
-    .pipe(isProd ? plugins.concatCss(CSS_PROD_BUNDLE) : plugins.util.noop())
-    .pipe(isProd ? cleanCss() : plugins.util.noop())
+    .pipe(plugins.sourcemaps.write(isProd ? '.' : ''))
     .pipe(gulp.dest(CSS_DEST));
 }
 
-function getExternalCss() {
+function getExternalScss() {
   return DEPENDENCIES.filter(d => /\.css$/.test(d.src));
 }
-
-export = () => merge(processComponentCss(), prepareTemplates(), processExternalCss());
+export = () => merge(processComponentScss(), prepareTemplates(), processExternalScss());

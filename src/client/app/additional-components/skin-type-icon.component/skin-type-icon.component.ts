@@ -11,17 +11,15 @@ import {Person} from "../../shared/person";
   templateUrl: '/app/additional-components/skin-type-icon.component/skin-type-icon.template.html',
   providers: [UploadedImageService]
 })
-
 export class SkinTypeIcon implements OnChanges {
   @Input() public scores;
   public person:Person;
   
-  constructor(private uploadedImage:UploadedImageService) {
-
-  }
+  constructor(
+    private uploadedImage:UploadedImageService
+  ) { }
   
   ngOnChanges() {
-    debugger;
     this.person = new Person(this.scores);
   }
 }
