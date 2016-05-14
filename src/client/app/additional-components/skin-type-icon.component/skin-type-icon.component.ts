@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit,OnChanges, Input } from '@angular/core';
 import { FORM_DIRECTIVES } from '@angular/common';
 
 import { UploadedImageService } from '../../shared/services/uploaded-image.service'
@@ -12,17 +12,16 @@ import {Person} from "../../shared/person";
   providers: [UploadedImageService]
 })
 
-export class SkinTypeIcon implements OnInit {
+export class SkinTypeIcon implements OnChanges {
   @Input() public scores;
   public person:Person;
+  
+  constructor(private uploadedImage:UploadedImageService) {
 
-  constructor(
-    private uploadedImage: UploadedImageService
-  ) {
-    this.person = new Person(this.scores);
   }
   
-  ngOnInit() {
-
+  ngOnChanges() {
+    debugger;
+    this.person = new Person(this.scores);
   }
 }

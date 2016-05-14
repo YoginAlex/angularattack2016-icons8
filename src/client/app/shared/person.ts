@@ -39,13 +39,14 @@ export class Person {
             }
         });
 
-        if(topSkinType){
+        if(!topSkinType){
             this.skinType = topSkinType;
         } else {
             this.skinType = SKIN_TYPE.skin_type_3
         }
 
-        if(this.sex){
+
+        if(!this.sex){
             this.sex = SEX.OTHER;
         }
 
