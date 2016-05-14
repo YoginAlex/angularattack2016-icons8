@@ -7,4 +7,17 @@ input[type="file"] {
 .c-upload-block {
   text-align: center;
   margin: 2rem 0;
+
+  .c-button {
+    margin: 3rem auto;
+  }
+}
+
+.c-preview-image {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 500px;
+  width: 40%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }

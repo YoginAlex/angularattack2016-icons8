@@ -13,4 +13,9 @@
   </button>
 </div>
 
-<img src='{{ imagePreviewUrl }}' alt=""/>
+<img
+  *ngIf="imagePreviewUrl"
+  class="c-preview-image"
+  src='{{ imagePreviewUrl }}'
+  alt="Preview for uploaded image"
+/>
