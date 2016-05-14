@@ -6,13 +6,11 @@ import { UploadedImageService } from '../shared/index';
 
 @Component({
   selector: 'sd-app',
-  // viewProviders: [UploadedImageService],
   templateUrl: 'app/components/app.component.html',
   directives: [ROUTER_DIRECTIVES, HomeComponent],
   styleUrls: ['app/components/app.component.css']
 })
-export class AppComponent {
-  constructor() {
 
-  }
+export class AppComponent {
+
 }

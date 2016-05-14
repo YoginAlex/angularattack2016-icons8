@@ -20,7 +20,7 @@ interface FileReaderEvent extends Event {
 })
 export class ImageUploader {
   private imagePreviewUrl: string;
-  @Output() public mainImage;
+  @Input() public mainImage;
 
   constructor(
     private uploadedImage: UploadedImageService
