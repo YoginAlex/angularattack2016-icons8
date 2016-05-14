@@ -9,6 +9,10 @@ import {Person} from "../../shared/person";
 @Component({
   selector: 'skin-type-icon',
   templateUrl: '/app/additional-components/skin-type-icon.component/skin-type-icon.template.html',
+  styleUrls: [
+    'css/main-classes.css',
+    'app/additional-components/skin-type-icon.component/skin-type-icon.component.css'
+  ],
   providers: [UploadedImageService]
 })
 export class SkinTypeIcon implements OnChanges {
@@ -20,6 +24,7 @@ export class SkinTypeIcon implements OnChanges {
   ) { }
   
   ngOnChanges() {
-    this.person = new Person(this.scores);
+    //TODO: UNCOMMENT
+    // this.person = new Person(this.scores);
   }
 }

@@ -13,15 +13,16 @@ import {ClassifyApi} from "../shared/services/classify-api.service";
     providers: [ClassifyApi, UploadedImageService]
 })
 export class HomeComponent {
-    public mainImage:any;
+  public mainImage:any;
 
-    constructor(public uploadedImage:UploadedImageService) {
+  constructor(
+    public uploadedImage:UploadedImageService
+  ) { }
 
-    }
-
-    ngOnInit() {
-        this.mainImage = {
-            scores:false
-        };
-    }
+  ngOnInit() {
+    //TODO: Remove preDefined. Need Only for Верстка :)
+    this.mainImage = {
+        scores: [1, 2, 3]
+    };
+  }
 }
