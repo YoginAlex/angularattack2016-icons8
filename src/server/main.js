@@ -29,28 +29,28 @@ router.post('/classify', function (req, res) {
 
   console.log(req.files);
 
-  form.parse(req, function(err, fields, files) {
-    console.log(files);
-    var params = {
-      images_file: fs.createReadStream(files.photo[0].path)
-    };
+  form.parse(req, function (err, fields, files) {
+    if (files.photo) {
+      var params = {
+        images_file: fs.createReadStream(files.photo[0].path)
+      };
 
 
-    visual_recognition.classify(params,
-      function (err, response) {
-        if (err) {
-          res.json({error: err});
-        }
-        else {
-          res.json(response);
-        }
-      });
-
+      visual_recognition.classify(params,
+        function (err, response) {
+          if (err) {
+            res.json({error: err});
+          }
+          else {
+            res.json(response);
+          }
+        });
+    } else {
+      res.json({error: 'File not found!'});
+    }
 
   });
 
-
- 
 
 });
 
