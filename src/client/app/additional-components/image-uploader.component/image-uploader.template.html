@@ -1,3 +1,6 @@
-<form action="">
-  <input type="text">
-</form>
+
+<div>
+  <input type="file" (change)="uploadImage(image)" #image />
+</div>
+
+<img src='{{ imagePreviewUrl }}' alt=""/>
