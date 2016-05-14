@@ -1,3 +1,5 @@
+@import "vars";
+
 /* Reset */
 html,
 body,
@@ -14,10 +16,16 @@ div {
 
 /* Set up a default font and some padding to provide breathing room */
 body {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  font-size: 16px;
+  font-family: $font-helvetica;
+  font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  color: $main-text-color;
+}
+
+h1, h2, h3 {
+  color: $main-header-color;
 }
 
 p {
@@ -38,36 +46,9 @@ li {
   margin-top: 4px;
 }
 
-input {
-  border: 1px solid #106cc8;
-  font-size: 14px;
-  height: 40px;
-  outline: none;
-  padding: 8px;
-}
-
-button {
-  background-color: #106cc8;
-  border-style: none;
-  color: rgba(255, 255, 255, 0.87);
-  cursor: pointer;
-  display: inline-block;
-  font-size: 14px;
-  height: 40px;
-  padding: 8px 18px;
-  text-decoration: none;
-}
-
-button:hover {
-  background-color: #28739e;
-}
-
-img {
-  width: 100px;
-  height: 100px;
-}
-
 sd-app {
   display: block;
   margin: 20% auto;
 }
+
+@import "buttons";

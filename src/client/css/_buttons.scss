@@ -1,0 +1,18 @@
+@import "vars";
+
+.c-button {
+  display: inline-block;
+  background: $button-color;
+  border-radius: 5px;
+
+  line-height: 21;
+  font-size: 18px;
+  color: white;
+
+  .m-positive {
+    background: $button-color-positive;
+  }
+  .m-negative {
+    background: $button-color-negative;
+  }
+}

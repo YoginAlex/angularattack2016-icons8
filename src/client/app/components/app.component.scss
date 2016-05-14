@@ -1,4 +1,10 @@
-h1 {
-  text-align: center;
-  color: red;
+@import "../../css/vars";
+
+.c-title {
+  svg {
+    display: block;
+    margin: 0 auto;
+    width: 80px;
+    height: 80px;
+  }
 }

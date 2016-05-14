@@ -1,0 +1,11 @@
+@import "vars";
+
+.c-title {
+  font-family: $font-title;
+  font-size: 36px;
+  line-height: 46px;
+  font-weight: normal;
+  color: $main-header-color;
+  margin: 2rem auto;
+  text-align: center;
+}
