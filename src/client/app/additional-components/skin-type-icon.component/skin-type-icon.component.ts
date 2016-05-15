@@ -35,7 +35,6 @@ export class SkinTypeIcon implements OnChanges {
   
   ngOnChanges() {
     this.person = new Person(this.scores);
-    console.log('isWrong<----', this.isWrong);
   }
 
   clickCorrect() {

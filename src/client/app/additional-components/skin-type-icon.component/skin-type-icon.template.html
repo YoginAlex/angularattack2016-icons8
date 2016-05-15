@@ -11,7 +11,7 @@
 
   <div
     class="b-buttons"
-    *ngIf="!person.isCorrect">
+    *ngIf="!person.isCorrect && !isWrong">
     <button class="c-button m-positive" (click)="clickCorrect()">
       Correct
     </button>
