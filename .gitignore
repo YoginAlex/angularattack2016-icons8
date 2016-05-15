@@ -47,3 +47,5 @@ tmp
 gulpfile.js
 gulpfile.js.map
 
+*.css
+*.css.map

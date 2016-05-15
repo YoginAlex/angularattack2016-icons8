@@ -10,7 +10,7 @@ export class ProjectConfig extends SeedConfig {
     super();
     
     this.APP_TITLE = 'AngularAttack Hackaton Icons8';
-    
+
     let additional_deps: InjectableDependency[] = [
       // {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
       // {src: 'lodash/lodash.min.js', inject: 'libs'},

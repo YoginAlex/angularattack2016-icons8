@@ -10,7 +10,6 @@ import {ClassifyApi} from "../shared/services/classify-api.service";
     templateUrl: 'app/components/home.component.html',
     styleUrls: [
       'css/main.css',
-      'css/main-classes.css',
       'app/components/home.component.css'
     ],
     providers: [ClassifyApi, UploadedImageService],
