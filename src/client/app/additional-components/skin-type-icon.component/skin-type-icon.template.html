@@ -10,7 +10,7 @@
     </div>
 
     <div
-      *ngIf="person.isCorrect || (!person.isCorrect && !isWrong)"
+      *ngIf="(person.isCorrect || (!person.isCorrect && !isWrong)) && !isSpecial()"
       class="b-description">
       <span *ngIf="person.sexToSting()"><strong>{{ person.sexToSting() }}</strong>, </span>
       <span *ngIf="person.type()" [innerHTML]="person.type()"></span>

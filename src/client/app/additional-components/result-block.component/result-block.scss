@@ -2,7 +2,7 @@
   display: block;
 
   animation-name: puffIn;
-  animation-duration: 1s;
+  animation-duration: 0.6s;
   animation-fill-mode: both;
 }
 
@@ -55,5 +55,11 @@
     .c-text-block {
       margin-top: 1rem;
     }
+  }
+}
+
+.c-button {
+  &.m-another-upload{
+    margin-top: 4rem;
   }
 }
