@@ -28,3 +28,15 @@
     border-color: $main-link-color;
   }
 }
+
+.b-choose-your {
+  div {
+    svg {
+      display: block;
+      margin: 0;
+      cursor: pointer;
+      width: 42px;
+      height: 42px;
+    }
+  }
+}
