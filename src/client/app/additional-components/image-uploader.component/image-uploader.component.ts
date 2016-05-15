@@ -18,7 +18,6 @@ interface FileReaderEvent extends Event {
   selector: 'image-uploader',
   templateUrl: '/app/additional-components/image-uploader.component/image-uploader.template.html',
   styleUrls: [
-    'css/main-classes.css',
     'app/additional-components/image-uploader.component/image-uploader.component.css'
   ],
   providers: [UploadedImageService, ClassifyApi]

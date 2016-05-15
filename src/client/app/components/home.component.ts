@@ -8,7 +8,11 @@ import {ClassifyApi} from "../shared/services/classify-api.service";
 @Component({
     selector: 'sd-home',
     templateUrl: 'app/components/home.component.html',
-    styleUrls: ['app/components/home.component.css'],
+    styleUrls: [
+      'css/main.css',
+      'css/main-classes.css',
+      'app/components/home.component.css'
+    ],
     providers: [ClassifyApi, UploadedImageService],
     directives: [FORM_DIRECTIVES, ImageUploader, SkinTypeIcon]
 })

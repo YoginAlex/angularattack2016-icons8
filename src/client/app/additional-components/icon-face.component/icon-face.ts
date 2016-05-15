@@ -8,7 +8,6 @@ import { Person, SKIN_TYPE, SEX } from "../../shared/person";
   selector:'icon-face',
   templateUrl:'/app/additional-components/icon-face.component/icon-face.template.html',
   styleUrls: [
-    'css/main-classes.css',
     'app/additional-components/icon-face.component/icon-face.css'
   ]
 })

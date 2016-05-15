@@ -11,7 +11,6 @@ import {IconFace} from "../icon-face.component/icon-face";
   selector: 'skin-type-icon',
   templateUrl: '/app/additional-components/skin-type-icon.component/skin-type-icon.template.html',
   styleUrls: [
-    'css/main-classes.css',
     'app/additional-components/skin-type-icon.component/skin-type-icon.component.css'
   ],
   directives:[IconFace],
