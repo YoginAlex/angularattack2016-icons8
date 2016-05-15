@@ -1,11 +1,11 @@
-<div class="c-upload-block" id="uploadButton">
+<div class="c-upload-block" id="upload-block">
   <input
       type="file"
       (change)="uploadImage(image)"
       accept="image/*"
       #image
   />
-  <button
+  <button id="uploadButton"
       class="c-button"
       (click)="clickForUpload($event)">
     Upload Your Photo

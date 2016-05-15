@@ -16,6 +16,14 @@ export class ResultBlock implements AfterViewInit {
   constructor(private _smoothScroll:SmoothScroll) {
   }
 
+  clickAnoterPhoto() {
+    this._smoothScroll.smoothScroll('uploadButton');
+    setTimeout(function () {
+      document.getElementById('uploadButton').click();
+    }, 1500)
+
+  }
+
   ngAfterViewInit() {
     console.log('footer');
     this._smoothScroll.smoothScroll('footer-block');
