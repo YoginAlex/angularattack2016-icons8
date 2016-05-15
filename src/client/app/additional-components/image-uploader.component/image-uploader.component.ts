@@ -3,6 +3,7 @@ import { FORM_DIRECTIVES } from '@angular/common';
 
 import { UploadedImageService } from '../../shared/services/uploaded-image.service'
 import { ClassifyApi } from "../../shared/services/classify-api.service";
+import {SmoothScroll} from "../../shared/services/smooth-scroll.service";
 
 //Just need for TS Compiler
 interface FileReaderEventTarget extends EventTarget {
@@ -27,20 +28,24 @@ export class ImageUploader {
   @Input() public mainImage;
   public isLoad;
 
-  constructor(private uploadedImage:UploadedImageService) {
+  constructor(private uploadedImage:UploadedImageService,,
+              private _smoothScroll:SmoothScroll) {
   }
 
   uploadImage(image:any) {
     let
       imageReader = new FileReader();
     this.imagePreviewUrl = '';
+
     imageReader.addEventListener('load', (event:FileReaderEvent) => {
       this.imagePreviewUrl = event.target.result;
+      this._smoothScroll.smoothScroll('image');
     }, false);
 
     if (image.files[0]) {
       imageReader.readAsDataURL(image.files[0]);
       this.isLoad = true;
+     // this._smoothScroll.smoothScroll('loaderImage');
       this.mainImage.scores = false;
       this.uploadedImage.upload(image.files[0]).then((scores) => {
         console.log('scores', scores);
