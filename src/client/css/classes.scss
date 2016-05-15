@@ -24,7 +24,11 @@
   text-decoration: none;
   transition: border 250ms ease-in-out;
   border-bottom: 1px solid transparent;
+  cursor: pointer;
+  &.m-mini{
+    font-size: 17px;
 
+  }
   &:hover {
     border-color: $main-link-color;
   }
