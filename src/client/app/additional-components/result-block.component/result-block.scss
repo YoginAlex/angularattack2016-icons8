@@ -1,3 +1,18 @@
+@-webkit-keyframes puffIn {
+  0% {
+    opacity: 0;
+    -webkit-transform-origin: 50% 50%;
+    -webkit-transform: scale(2,2);
+    -webkit-filter: blur(2px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform-origin: 50% 50%;
+    -webkit-transform: scale(1,1);
+    -webkit-filter: blur(0px);
+  }
+}
 :host(.result-block) {
   display: block;
 
@@ -7,7 +22,7 @@
 }
 
 .b-wrapper{
-  margin-bottom:20rem;
+ // margin-bottom:20rem;
   display: block;
 }
 
