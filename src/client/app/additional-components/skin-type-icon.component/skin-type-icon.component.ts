@@ -6,7 +6,7 @@ import {Person, SEX, SKIN_TYPE} from "../../shared/person";
 
 import {IconFace} from "../icon-face.component/icon-face";
 import {SelectIcon} from "../select-icon.component/select-icon";
-import {ResultBlock} from "../result-block.component/result";
+import {ResultBlock} from "../result-block.component/result-block";
 import { UploadedImageService } from '../../shared/services/uploaded-image.service'
 
 

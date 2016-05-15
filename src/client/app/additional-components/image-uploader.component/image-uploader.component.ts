@@ -41,7 +41,6 @@ export class ImageUploader {
       imageReader.readAsDataURL(image.files[0]);
       //TODO: Preloader показывать
       this.uploadedImage.upload(image.files[0]).then((scores) => {
-        console.log('scores', scores);
         this.mainImage.scores = scores;
       });
     }
