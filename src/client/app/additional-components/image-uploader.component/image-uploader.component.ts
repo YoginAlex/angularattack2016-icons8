@@ -23,18 +23,18 @@ interface FileReaderEvent extends Event {
   providers: [UploadedImageService, ClassifyApi]
 })
 export class ImageUploader {
-  private imagePreviewUrl: string;
+  private imagePreviewUrl:string;
   @Input() public mainImage;
   public isLoad;
 
-  constructor(
-    private uploadedImage: UploadedImageService
-  ) {}
+  constructor(private uploadedImage:UploadedImageService) {
+  }
 
-  uploadImage(image: any){
+  uploadImage(image:any) {
     let
       imageReader = new FileReader();
-    imageReader.addEventListener('load', (event: FileReaderEvent) => {
+    this.imagePreviewUrl = '';
+    imageReader.addEventListener('load', (event:FileReaderEvent) => {
       this.imagePreviewUrl = event.target.result;
     }, false);
 

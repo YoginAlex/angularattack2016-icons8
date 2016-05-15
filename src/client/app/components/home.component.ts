@@ -4,6 +4,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { UploadedImageService } from '../shared/index';
 import { ImageUploader, SkinTypeIcon } from '../additional-components/index'
 import {ClassifyApi} from "../shared/services/classify-api.service";
+import {Image} from "../shared/image";
 
 @Component({
     selector: 'sd-home',
@@ -16,15 +17,13 @@ import {ClassifyApi} from "../shared/services/classify-api.service";
     directives: [FORM_DIRECTIVES, ImageUploader, SkinTypeIcon]
 })
 export class HomeComponent {
-  public mainImage:any;
+  public mainImage: Image;
 
   constructor(
     public uploadedImage:UploadedImageService
   ) { }
 
   ngOnInit() {
-    this.mainImage = {
-        scores: false
-    };
+    this.mainImage = new Image();
   }
 }
