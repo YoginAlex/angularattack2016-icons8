@@ -14,7 +14,6 @@ export class UploadedImageService {
   public upload(image:File):void {
     return this.classifyApi.getClassify(image)
       .then((scores) => {
-        //this.scores = scores;
         return scores;
       });
   }

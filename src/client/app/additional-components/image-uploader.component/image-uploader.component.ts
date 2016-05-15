@@ -1,9 +1,10 @@
 import { Component, Output, Input, Renderer } from '@angular/core';
 import { FORM_DIRECTIVES } from '@angular/common';
 
-import { UploadedImageService } from '../../shared/services/uploaded-image.service'
+import { SmoothScroll } from "../../shared/services/smooth-scroll.service";
+
 import { ClassifyApi } from "../../shared/services/classify-api.service";
-import {SmoothScroll} from "../../shared/services/smooth-scroll.service";
+import { UploadedImageService } from '../../shared/services/uploaded-image.service'
 
 //Just need for TS Compiler
 interface FileReaderEventTarget extends EventTarget {
@@ -25,10 +26,10 @@ interface FileReaderEvent extends Event {
   host: {'class' : 'ng-animate image-uploader'}
 })
 export class ImageUploader {
-  @Input() public mainImage;
-  @Input() public isStart: Boolean;
-  private imagePreviewUrl: String;
-  public isLoad;
+  @Input() public mainImage:any;
+  @Input() public isStart:Boolean;
+  private imagePreviewUrl:String;
+  public isLoad:any;
 
   constructor(
     private uploadedImage:UploadedImageService,
@@ -37,7 +38,7 @@ export class ImageUploader {
     this.isStart = true;
   }
 
-  uploadImage(image:any) {
+  uploadImage(image:any):void {
     let
       imageReader = new FileReader();
     this.imagePreviewUrl = '';
@@ -60,7 +61,7 @@ export class ImageUploader {
     }
   }
 
-  clickForUpload(event) {
+  clickForUpload(event):void {
     event.preventDefault();
     //SuppaDuppa Monkey HacK! It's Since Biach!
     setTimeout(function () {

@@ -4,7 +4,7 @@ export class Image {
   public url:string;
   public scores:any;
 
-  constructor(obj:any) {
+  constructor() {
     this.clear();
   }
 

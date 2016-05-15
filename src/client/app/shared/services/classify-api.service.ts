@@ -5,10 +5,9 @@ import { Score } from "../scores";
 
 @Injectable()
 export class ClassifyApi {
-  constructor() {
-  }
-
   private classifyUrl = 'https://fizpatrick.herokuapp.com/api/classify';
+
+  constructor() { }
 
   public getClassify(image: File) {
     return this.makeFileRequest(this.classifyUrl, [], image).then((result: any) => {

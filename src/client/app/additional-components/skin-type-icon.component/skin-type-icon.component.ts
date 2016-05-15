@@ -1,14 +1,14 @@
 import { Component, OnInit,OnChanges, Input, AfterViewInit } from '@angular/core';
 import { FORM_DIRECTIVES } from '@angular/common';
 
-import {Score} from "../../shared/scores";
-import {Person, SEX, SKIN_TYPE} from "../../shared/person";
+import { Score } from "../../shared/scores";
+import { Person, SEX, SKIN_TYPE } from "../../shared/person";
 
-import {IconFace} from "../icon-face.component/icon-face";
-import {SelectIcon} from "../select-icon.component/select-icon";
-import {ResultBlock} from "../result-block.component/result-block";
+import { IconFace } from "../icon-face.component/icon-face";
+import { SelectIcon } from "../select-icon.component/select-icon";
+import { ResultBlock } from "../result-block.component/result-block";
 import { UploadedImageService } from '../../shared/services/uploaded-image.service'
-import {SmoothScroll} from "../../shared/services/smooth-scroll.service";
+import { SmoothScroll } from "../../shared/services/smooth-scroll.service";
 
 
 @Component({
@@ -55,7 +55,6 @@ export class SkinTypeIcon implements OnChanges,  AfterViewInit {
     this.person.isCorrect = false;
   }
 
-
   ngAfterViewInit(){
     this._smoothScroll.smoothScroll('iconFace');
   }
@@ -68,5 +67,4 @@ export class SkinTypeIcon implements OnChanges,  AfterViewInit {
   isSpecial() {
     return (this.person.sex === SEX.other || this.person.skinType === SKIN_TYPE.other);
   }
-
 }

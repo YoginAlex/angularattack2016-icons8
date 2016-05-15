@@ -1,6 +1,8 @@
 import { Component, OnInit, OnChanges, Input, AfterViewInit } from '@angular/core';
-import {Person} from "../../shared/person";
-import {SmoothScroll} from "../../shared/services/smooth-scroll.service";
+
+import { SmoothScroll } from "../../shared/services/smooth-scroll.service";
+
+import { Person } from "../../shared/person";
 
 @Component({
   selector: 'result-block',

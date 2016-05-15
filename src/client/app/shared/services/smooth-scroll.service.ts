@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class SmoothScroll {
-  win;
+  public win;
   private offSet:number;
 
   constructor() {

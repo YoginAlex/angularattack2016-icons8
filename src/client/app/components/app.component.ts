@@ -11,6 +11,4 @@ import { UploadedImageService } from '../shared/index';
   styleUrls: ['app/components/app.component.css']
 })
 
-export class AppComponent {
-
-}
+export class AppComponent {}
