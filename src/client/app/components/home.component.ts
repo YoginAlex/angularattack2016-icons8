@@ -1,5 +1,5 @@
 import { FORM_DIRECTIVES } from '@angular/common';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 
 import { Image } from "../shared/image";
 import { UploadedImageService } from '../shared/index';
@@ -17,7 +17,7 @@ import { SmoothScroll } from "../shared/services/smooth-scroll.service";
   providers: [ClassifyApi, UploadedImageService, SmoothScroll],
   directives: [FORM_DIRECTIVES, ImageUploader, SkinTypeIcon]
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit{
   public mainImage:Image;
   
   constructor(
@@ -28,4 +28,9 @@ export class HomeComponent {
   ngOnInit() {
     this.mainImage = new Image();
   }
+
+  ngAfterViewInit(){
+    this._smoothScroll.smoothScroll('mainapp');
+  }
+
 }
