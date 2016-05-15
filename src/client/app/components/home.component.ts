@@ -9,8 +9,8 @@ import {ClassifyApi} from "../shared/services/classify-api.service";
     selector: 'sd-home',
     templateUrl: 'app/components/home.component.html',
     styleUrls: ['app/components/home.component.css'],
-    directives: [FORM_DIRECTIVES, ImageUploader, SkinTypeIcon],
-    providers: [ClassifyApi, UploadedImageService]
+    providers: [ClassifyApi, UploadedImageService],
+    directives: [FORM_DIRECTIVES, ImageUploader, SkinTypeIcon]
 })
 export class HomeComponent {
   public mainImage:any;
@@ -20,9 +20,8 @@ export class HomeComponent {
   ) { }
 
   ngOnInit() {
-    //TODO: Remove preDefined. Need Only for Верстка :)
     this.mainImage = {
-        scores: [1, 2, 3]
+        scores: false
     };
   }
 }
