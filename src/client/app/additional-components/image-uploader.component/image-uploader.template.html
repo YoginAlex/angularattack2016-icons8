@@ -1,20 +1,34 @@
-<div class="c-upload-block">
+<div class="c-upload-block" id="uploadButton">
   <input
-    type="file"
-    (change)="uploadImage(image)"
-    accept="image/*"
-    #image
+      type="file"
+      (change)="uploadImage(image)"
+      accept="image/*"
+      #image
   />
   <button
-    class="c-button"
-    (click)="clickForUpload($event)">
+      class="c-button"
+      (click)="clickForUpload($event)">
     Upload Your Photo
   </button>
 </div>
 
-<img
-  *ngIf="imagePreviewUrl"
-  class="c-preview-image"
-  src='{{ imagePreviewUrl }}'
-  alt="Preview for uploaded image"
-/>
+<div id="image">
+  <img
+      *ngIf="imagePreviewUrl"
+      class="c-preview-image"
+      src='{{ imagePreviewUrl }}'
+      alt="Preview for uploaded image"
+
+  />
+</div>
+
+<div id="loaderImage"></div>
+<div *ngIf="isLoad" class="b-spinner-container">
+  <div class="sk-folding-cube">
+    <div class="sk-cube1 sk-cube"></div>
+    <div class="sk-cube2 sk-cube"></div>
+    <div class="sk-cube4 sk-cube"></div>
+    <div class="sk-cube3 sk-cube"></div>
+  </div>
+</div>
+

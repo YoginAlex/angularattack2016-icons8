@@ -8,6 +8,7 @@ import {IconFace} from "../icon-face.component/icon-face";
 import {SelectIcon} from "../select-icon.component/select-icon";
 import {ResultBlock} from "../result-block.component/result-block";
 import { UploadedImageService } from '../../shared/services/uploaded-image.service'
+import {SmoothScroll} from "../../shared/services/smooth-scroll.service";
 
 
 @Component({
@@ -29,7 +30,8 @@ export class SkinTypeIcon implements OnChanges {
   public skinType = SKIN_TYPE;
 
   constructor(
-    private uploadedImage:UploadedImageService
+    private uploadedImage:UploadedImageService,
+    private _smoothScroll:SmoothScroll
   ) { 
     this.isWrong = false;
     this.isCorrect = false;
@@ -37,6 +39,7 @@ export class SkinTypeIcon implements OnChanges {
   
   ngOnChanges() {
     this.person = new Person(this.scores);
+    this._smoothScroll.smoothScroll('iconFace');
     console.log('this.person', this.person);
   }
 

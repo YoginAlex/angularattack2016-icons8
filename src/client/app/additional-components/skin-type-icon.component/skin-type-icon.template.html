@@ -1,8 +1,12 @@
 <div class="c-final-icon">
 
+    <icon-face *ngIf="person" [person]="person">
+    </icon-face>
+  </div>
+
     <div
       *ngIf="person.isCorrect || (!person.isCorrect && !isWrong)"
-      class="b-icon">
+      class="b-icon" id="iconFace">
       <icon-face
           *ngIf="person"
           [person]="person">
