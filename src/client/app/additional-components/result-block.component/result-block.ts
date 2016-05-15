@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, Input, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, AfterViewInit } from '@angular/core';
 import {Person} from "../../shared/person";
 import {SmoothScroll} from "../../shared/services/smooth-scroll.service";
 
@@ -10,14 +10,14 @@ import {SmoothScroll} from "../../shared/services/smooth-scroll.service";
   ],
   host: {'class': 'ng-animate result-block'}
 })
-export class ResultBlock implements AfterViewChecked {
+export class ResultBlock implements AfterViewInit {
   @Input() public person:Person;
 
   constructor(private _smoothScroll:SmoothScroll) {
   }
 
-  ngAfterViewChecked() {
+  ngAfterViewInit() {
     console.log('footer');
-    this._smoothScroll.smoothScroll('footer');
+    this._smoothScroll.smoothScroll('footer-block');
   }
 }
