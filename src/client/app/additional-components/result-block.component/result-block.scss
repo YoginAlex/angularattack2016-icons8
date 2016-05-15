@@ -1,13 +1,32 @@
 :host(.result-block) {
   display: block;
-  transition: all 500ms ease-in-out;
-  background-color: red;
-}
 
+  animation-name: puffIn;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
 :host(.result-block.ng-enter) {
-  opacity: 0;
+}
+:host(.result-block.ng-enter-active) {
 }
 
-:host(.result-block.ng-enter-active) {
-  opacity: 1;
+.c-offer {
+  display: block;
+
+  .b-half {
+    display: block;
+    width: 50%;
+
+    .b-example {
+      height: 24px;
+      line-height: 24px;
+      font-size: 22px;
+      font-weight: bold;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
 }

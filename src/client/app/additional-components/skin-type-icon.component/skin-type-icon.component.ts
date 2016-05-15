@@ -21,7 +21,7 @@ import { UploadedImageService } from '../../shared/services/uploaded-image.servi
 })
 export class SkinTypeIcon implements OnChanges {
   @Input() public scores;
-  public person:Person;
+  public person: Person;
   public isWrong: Boolean;
   public isCorrect: Boolean;
 
@@ -37,6 +37,7 @@ export class SkinTypeIcon implements OnChanges {
   
   ngOnChanges() {
     this.person = new Person(this.scores);
+    console.log('this.person', this.person);
   }
 
   clickCorrect() {

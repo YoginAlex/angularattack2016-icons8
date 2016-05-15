@@ -3,7 +3,9 @@
     <div
       *ngIf="person.isCorrect || (!person.isCorrect && !isWrong)"
       class="b-icon">
-      <icon-face *ngIf="person" [person]="person">
+      <icon-face
+          *ngIf="person"
+          [person]="person">
       </icon-face>
     </div>
 
