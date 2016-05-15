@@ -25,6 +25,7 @@ interface FileReaderEvent extends Event {
 export class ImageUploader {
   private imagePreviewUrl: string;
   @Input() public mainImage;
+  public isLoad;
 
   constructor(
     private uploadedImage: UploadedImageService
@@ -39,10 +40,12 @@ export class ImageUploader {
 
     if (image.files[0]) {
       imageReader.readAsDataURL(image.files[0]);
-      //TODO: Preloader показывать
+      this.isLoad = true;
+      this.mainImage.scores = false;
       this.uploadedImage.upload(image.files[0]).then((scores) => {
         console.log('scores', scores);
         this.mainImage.scores = scores;
+        this.isLoad = false;
       });
     }
   }

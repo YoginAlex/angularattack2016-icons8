@@ -1,4 +1,4 @@
-.b-spinner-container{
+.b-spinner-container-full{
   width: 60px;
   height: 60px;
   position: absolute;
@@ -7,6 +7,10 @@
   bottom: 60px;
   right: 0;
   margin: auto;
+}
+
+.b-spinner-container{
+  margin-top:5rem
 }
 
 .sk-folding-cube {
@@ -35,7 +39,7 @@
   width: 100%;
   height: 100%;
  // background-color: #333;
-  background-color: #803DBB;
+  background-color: #27ae60;
   -webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
   animation: sk-foldCubeAngle 2.4s infinite linear both;
   -webkit-transform-origin: 100% 100%;
