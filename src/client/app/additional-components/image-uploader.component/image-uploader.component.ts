@@ -21,15 +21,18 @@ interface FileReaderEvent extends Event {
   styleUrls: [
     'app/additional-components/image-uploader.component/image-uploader.component.css'
   ],
-  providers: [UploadedImageService, ClassifyApi]
+  providers: [UploadedImageService, ClassifyApi],
+  host: {'class' : 'ng-animate image-uploader'}
 })
 export class ImageUploader {
   private imagePreviewUrl:string;
   @Input() public mainImage;
   public isLoad;
 
-  constructor(private uploadedImage:UploadedImageService,,
-              private _smoothScroll:SmoothScroll) {
+  constructor(
+    private uploadedImage:UploadedImageService,
+    private _smoothScroll:SmoothScroll) {
+    
   }
 
   uploadImage(image:any) {

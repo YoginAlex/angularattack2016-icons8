@@ -17,6 +17,7 @@ import {SmoothScroll} from "../../shared/services/smooth-scroll.service";
   styleUrls: [
     'app/additional-components/skin-type-icon.component/skin-type-icon.component.css'
   ],
+  host: { 'class' : 'ng-animate skin-type-icon' },
   directives:[IconFace, SelectIcon, ResultBlock],
   providers: [UploadedImageService]
 })

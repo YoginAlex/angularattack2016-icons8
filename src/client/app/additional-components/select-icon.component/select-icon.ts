@@ -9,7 +9,7 @@ import { Person, SvgIcons, SEX, SKIN_TYPE } from "../../shared/person";
   styleUrls: [
     'app/additional-components/select-icon.component/select-icon.css'
   ],
-
+  host: { 'class' : 'ng-animate select-icon' },
 })
 export class SelectIcon {
   @Input() public person:Person;

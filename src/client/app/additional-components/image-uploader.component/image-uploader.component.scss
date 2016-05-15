@@ -1,3 +1,11 @@
+:host(.image-uploader .c-preview-image) {
+  display: block;
+
+  animation-name: spaceInUp;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
 input[type="file"] {
   visibility: hidden;
   position: absolute;
@@ -12,6 +20,7 @@ input[type="file"] {
     margin: 3rem auto;
   }
 }
+
 .c-preview-image {
   display: block;
   text-align: center;
