@@ -8,7 +8,7 @@ import { UploadedImageService } from '../shared/index';
   selector: 'sd-app',
   templateUrl: 'app/components/app.component.html',
   directives: [ROUTER_DIRECTIVES, HomeComponent],
-  styleUrls: ['css/main-classes.css', 'app/components/app.component.css']
+  styleUrls: ['app/components/app.component.css']
 })
 
 export class AppComponent {
