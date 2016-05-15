@@ -9,7 +9,7 @@ export class ProjectConfig extends SeedConfig {
   constructor() {
     super();
     
-    this.APP_TITLE = 'AngularAttack Hackaton Icons8';
+    this.APP_TITLE = 'Fitzpatrick for AngularAttack by Icons8';
 
     let additional_deps: InjectableDependency[] = [
       // {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
