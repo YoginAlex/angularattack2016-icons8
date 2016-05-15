@@ -21,15 +21,20 @@ interface FileReaderEvent extends Event {
   styleUrls: [
     'app/additional-components/image-uploader.component/image-uploader.component.css'
   ],
-  providers: [UploadedImageService, ClassifyApi]
+  providers: [UploadedImageService, ClassifyApi],
+  host: {'class' : 'ng-animate image-uploader'}
 })
 export class ImageUploader {
-  private imagePreviewUrl:string;
   @Input() public mainImage;
+  @Input() public isStart: Boolean;
+  private imagePreviewUrl: String;
   public isLoad;
 
-  constructor(private uploadedImage:UploadedImageService,
-              private _smoothScroll:SmoothScroll) {
+  constructor(
+    private uploadedImage:UploadedImageService,
+    private _smoothScroll:SmoothScroll) 
+  {
+    this.isStart = true;
   }
 
   uploadImage(image:any) {
@@ -40,6 +45,7 @@ export class ImageUploader {
     imageReader.addEventListener('load', (event:FileReaderEvent) => {
       this.imagePreviewUrl = event.target.result;
       this._smoothScroll.smoothScroll('image');
+      this.isStart = false;
     }, false);
 
     if (image.files[0]) {
@@ -48,7 +54,6 @@ export class ImageUploader {
      // this._smoothScroll.smoothScroll('loaderImage');
       this.mainImage.scores = false;
       this.uploadedImage.upload(image.files[0]).then((scores) => {
-        console.log('scores', scores);
         this.mainImage.scores = scores;
         this.isLoad = false;
       });
@@ -57,7 +62,10 @@ export class ImageUploader {
 
   clickForUpload(event) {
     event.preventDefault();
-    event.target.parentNode.children[0].click(); //SuppaDuppa Monkey HacK! It's Since Biach!
+    //SuppaDuppa Monkey HacK! It's Since Biach!
+    setTimeout(function () {
+      document.getElementById('uploadButton').click();
+    }, 50);
   }
   
 }

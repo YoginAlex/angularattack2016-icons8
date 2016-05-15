@@ -16,12 +16,11 @@ export class ResultBlock implements AfterViewInit {
   constructor(private _smoothScroll:SmoothScroll) {
   }
 
-  clickAnoterPhoto() {
+  clickAnotherPhoto() {
     this._smoothScroll.smoothScroll('uploadButton');
     setTimeout(function () {
       document.getElementById('uploadButton').click();
     }, 100)
-
   }
 
   ngAfterViewInit() {

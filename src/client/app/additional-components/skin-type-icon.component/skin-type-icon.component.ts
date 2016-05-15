@@ -40,7 +40,6 @@ export class SkinTypeIcon implements OnChanges,  AfterViewInit {
   
   ngOnChanges() {
     this.person = new Person(this.scores);
-    console.log('this.person', this.person);
   }
 
   clickCorrect() {
