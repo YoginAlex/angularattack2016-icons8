@@ -43,9 +43,9 @@
     </select-icon>
   </div>
 
-  <!--*ngIf="person.isCorrect"-->
+  <!--*ngIf="person.isCorrect && (isWrong || isCorrect)"-->
   <result-block
-    *ngIf="person.isCorrect"
+    *ngIf="person.isCorrect && (isWrong || isCorrect)"
     [person]="person">
   </result-block>
 
