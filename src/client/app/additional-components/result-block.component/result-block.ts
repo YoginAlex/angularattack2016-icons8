@@ -20,7 +20,7 @@ export class ResultBlock implements AfterViewInit {
     this._smoothScroll.smoothScroll('uploadButton');
     setTimeout(function () {
       document.getElementById('uploadButton').click();
-    }, 1500)
+    }, 1000)
 
   }
 

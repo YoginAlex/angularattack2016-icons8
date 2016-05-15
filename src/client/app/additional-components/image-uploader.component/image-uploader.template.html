@@ -12,15 +12,14 @@
   </button>
 </div>
 
-<div id="image">
+<div id="image"></div>
   <img
       *ngIf="imagePreviewUrl"
       class="c-preview-image"
       src='{{ imagePreviewUrl }}'
       alt="Preview for uploaded image"
-
   />
-</div>
+
 
 <div id="loaderImage"></div>
 <div *ngIf="isLoad" class="b-spinner-container">
