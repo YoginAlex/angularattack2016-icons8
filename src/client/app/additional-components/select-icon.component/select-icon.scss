@@ -1,0 +1,24 @@
+.b-description {
+  margin: 3rem auto 0;
+}
+
+.b-choose-your {
+  display: block;
+  margin: 1rem auto;
+
+  div {
+    display: inline-block;
+    margin: 0.4rem;
+    text-align: center;
+    width: 42px;
+    height: 42px;
+
+    svg {
+      display: block;
+      margin: 0;
+      cursor: pointer;
+      width: 42px;
+      height: 42px;
+    }
+  }
+}

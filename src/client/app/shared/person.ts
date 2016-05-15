@@ -1,10 +1,11 @@
 import {Score} from "./scores";
+
+
 export enum SEX {
   women,
   men,
   other
 }
-
 export enum SKIN_TYPE{
   type1,
   type2,
@@ -15,12 +16,14 @@ export enum SKIN_TYPE{
   other
 }
 
-
 export class Person {
   public sex:SEX;
   public skinType:SKIN_TYPE;
+  public isCorrect: Boolean;
 
   constructor(scores:Array<Score>) {
+    this.isCorrect = false;
+    
     var maxSkinTypeScore;
     var topSkinType;
 
@@ -58,7 +61,7 @@ export class Person {
   }
 
   type() {
-    let string = 'Fitzpatrick type ';
+    let string = 'Fitzpatrick ';
     let skinTypeInfo = {
       type1: {
         number: 'I',
@@ -90,7 +93,7 @@ export class Person {
     if (!type) {
       return false;
     } else {
-      return string + type.number + ' (' + type.info + ')';
+      return string + '<strong>type ' + type.number + '</strong>' + '<br/> (' + type.info + ')';
     }
 
   }

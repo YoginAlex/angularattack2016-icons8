@@ -1,0 +1,19 @@
+<div class="b-description">
+  Which one then?
+</div>
+
+<div class="b-choose-your">
+  <div
+    *ngFor="let icon of women; let i = index"
+    [innerHTML]="icon"
+    (click)="selectIcon(sex.women, i)">
+  </div>
+
+  <br/>
+
+  <div
+      *ngFor="let icon of men; let i = index"
+      [innerHTML]="icon"
+      (click)="selectIcon(sex.men, i)">
+  </div>
+</div>
