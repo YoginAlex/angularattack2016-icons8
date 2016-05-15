@@ -37,15 +37,13 @@ export class SkinTypeIcon implements OnChanges {
   
   ngOnChanges() {
     this.person = new Person(this.scores);
-    //this._smoothScroll.smoothScroll('iconFace');
+    this._smoothScroll.smoothScroll('iconFace');
   }
 
   clickCorrect() {
     this.isCorrect = true;
     this.isWrong = false;
     this.person.isCorrect = true;
-    debugger;
-    this._smoothScroll.smoothScroll('uploadButton');
   }
 
   clickWrong() {
