@@ -1,11 +1,13 @@
 import { Component, OnInit,OnChanges, Input } from '@angular/core';
 import { FORM_DIRECTIVES } from '@angular/common';
 
-import { UploadedImageService } from '../../shared/services/uploaded-image.service'
 import {Score} from "../../shared/scores";
 import {Person, SEX, SKIN_TYPE} from "../../shared/person";
+
 import {IconFace} from "../icon-face.component/icon-face";
 import {SelectIcon} from "../select-icon.component/select-icon";
+import {ResultBlock} from "../result-block.component/result-block";
+import { UploadedImageService } from '../../shared/services/uploaded-image.service'
 import {SmoothScroll} from "../../shared/services/smooth-scroll.service";
 
 
@@ -15,12 +17,12 @@ import {SmoothScroll} from "../../shared/services/smooth-scroll.service";
   styleUrls: [
     'app/additional-components/skin-type-icon.component/skin-type-icon.component.css'
   ],
-  directives:[IconFace, SelectIcon],
+  directives:[IconFace, SelectIcon, ResultBlock],
   providers: [UploadedImageService]
 })
 export class SkinTypeIcon implements OnChanges {
   @Input() public scores;
-  public person:Person;
+  public person: Person;
   public isWrong: Boolean;
   public isCorrect: Boolean;
 
@@ -38,6 +40,7 @@ export class SkinTypeIcon implements OnChanges {
   ngOnChanges() {
     this.person = new Person(this.scores);
     this._smoothScroll.smoothScroll('iconFace');
+    console.log('this.person', this.person);
   }
 
   clickCorrect() {
@@ -50,6 +53,5 @@ export class SkinTypeIcon implements OnChanges {
     this.isCorrect = false;
     this.isWrong = true;
     this.person.isCorrect = false;
-
   }
 }

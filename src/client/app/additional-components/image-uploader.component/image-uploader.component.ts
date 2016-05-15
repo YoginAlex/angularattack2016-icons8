@@ -48,7 +48,6 @@ export class ImageUploader {
      // this._smoothScroll.smoothScroll('loaderImage');
       this.mainImage.scores = false;
       this.uploadedImage.upload(image.files[0]).then((scores) => {
-        console.log('scores', scores);
         this.mainImage.scores = scores;
         this.isLoad = false;
       });

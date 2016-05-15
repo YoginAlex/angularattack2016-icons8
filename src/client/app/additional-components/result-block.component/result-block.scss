@@ -1,0 +1,32 @@
+:host(.result-block) {
+  display: block;
+
+  animation-name: puffIn;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+:host(.result-block.ng-enter) {
+}
+:host(.result-block.ng-enter-active) {
+}
+
+.c-offer {
+  display: block;
+
+  .b-half {
+    display: block;
+    width: 50%;
+
+    .b-example {
+      height: 24px;
+      line-height: 24px;
+      font-size: 22px;
+      font-weight: bold;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

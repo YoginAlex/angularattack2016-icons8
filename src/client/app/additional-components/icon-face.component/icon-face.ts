@@ -2,7 +2,7 @@
  * Created by nkhri on 15.05.2016.
  */
 import { Component, OnInit,OnChanges, Input } from '@angular/core';
-import { Person, SKIN_TYPE, SEX } from "../../shared/person";
+import { Person, SvgIcons, SKIN_TYPE, SEX } from "../../shared/person";
 
 @Component({
   selector:'icon-face',
