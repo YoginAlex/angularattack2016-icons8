@@ -1,24 +1,29 @@
 <div class="c-final-icon">
-  <div class="b-icon">
-    <icon-face *ngIf="person" [person]="person">
-    </icon-face>
-  </div>
 
-  <div class="b-description">
-    <span *ngIf="person.sexToSting()"><strong>{{ person.sexToSting() }}</strong>, </span>
-    <span *ngIf="person.type()" [innerHTML]="person.type()"></span>
-  </div>
+    <div
+      *ngIf="person.isCorrect || (!person.isCorrect && !isWrong)"
+      class="b-icon">
+      <icon-face *ngIf="person" [person]="person">
+      </icon-face>
+    </div>
 
-  <div
-    class="b-buttons"
-    *ngIf="!person.isCorrect && !isWrong">
-    <button class="c-button m-positive" (click)="clickCorrect()">
-      Correct
-    </button>
-    <button class="c-button m-negative" (click)="clickWrong()">
-      Wrong
-    </button>
-  </div>
+    <div
+      *ngIf="person.isCorrect || (!person.isCorrect && !isWrong)"
+      class="b-description">
+      <span *ngIf="person.sexToSting()"><strong>{{ person.sexToSting() }}</strong>, </span>
+      <span *ngIf="person.type()" [innerHTML]="person.type()"></span>
+    </div>
+
+    <div
+      *ngIf="!person.isCorrect && !isWrong"
+      class="b-buttons">
+      <button class="c-button m-positive" (click)="clickCorrect()">
+        Correct
+      </button>
+      <button class="c-button m-negative" (click)="clickWrong()">
+        Wrong
+      </button>
+    </div>
 
   <div
       class="b-buttons"
@@ -31,9 +36,14 @@
   <div
     *ngIf="isWrong && !person.isCorrect">
     <select-icon
-        [person]="person"
-        [isWrong]="isWrong">
+      [person]="person"
+      [isWrong]="isWrong">
     </select-icon>
   </div>
+
+  <result-block
+    *ngIf="person.isCorrect"
+    [person]="person">
+  </result-block>
 
 </div>

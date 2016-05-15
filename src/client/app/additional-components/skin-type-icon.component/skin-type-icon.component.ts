@@ -1,11 +1,13 @@
 import { Component, OnInit,OnChanges, Input } from '@angular/core';
 import { FORM_DIRECTIVES } from '@angular/common';
 
-import { UploadedImageService } from '../../shared/services/uploaded-image.service'
 import {Score} from "../../shared/scores";
 import {Person, SEX, SKIN_TYPE} from "../../shared/person";
+
 import {IconFace} from "../icon-face.component/icon-face";
 import {SelectIcon} from "../select-icon.component/select-icon";
+import {ResultBlock} from "../result-block.component/result";
+import { UploadedImageService } from '../../shared/services/uploaded-image.service'
 
 
 @Component({
@@ -14,7 +16,7 @@ import {SelectIcon} from "../select-icon.component/select-icon";
   styleUrls: [
     'app/additional-components/skin-type-icon.component/skin-type-icon.component.css'
   ],
-  directives:[IconFace, SelectIcon],
+  directives:[IconFace, SelectIcon, ResultBlock],
   providers: [UploadedImageService]
 })
 export class SkinTypeIcon implements OnChanges {
