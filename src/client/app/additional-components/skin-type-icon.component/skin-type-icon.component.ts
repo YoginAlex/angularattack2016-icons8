@@ -47,6 +47,7 @@ export class SkinTypeIcon implements OnChanges {
     this.isCorrect = true;
     this.isWrong = false;
     this.person.isCorrect = true;
+
   }
 
   clickWrong() {
