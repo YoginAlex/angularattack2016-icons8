@@ -1,5 +1,3 @@
-<p>Hello {{person.sex}} {{sex.MEN}} {{skinType.other}}</p>
-
 <div
   class="c-final-icon"
  *ngIf="person.sex === sex.women">
@@ -24,7 +22,8 @@
   <p *ngIf="person.skinType === skinType.other">Other</p>
 </div>
 
-<div  *ngIf="person.sex === sex.men"
+<div
+  *ngIf="person.sex === sex.men"
   class="c-final-icon">
   <!--M 1-->
   <svg *ngIf="person.skinType === skinType.type1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M14 27c0 2.208-1.79 4-4 4s-4-1.792-4-4c0-2.21 1.79-4 4-4s4 1.79 4 4m28 0c0-2.21-1.79-4-4-4s-4 1.79-4 4c0 2.208 1.79 4 4 4s4-1.792 4-4" fill="#FFCC80"/><path d="M9 20c0-12.725 30-8.285 30 0v10c0 8.286-6.716 15-15 15S9 38.286 9 30V20z" fill="#FFE0B2"/><path d="M40.89 19.338C40.418 13.365 38.33 7.482 31 6l-2-3h-5C14.77 3 7 10.48 7 21v3.4l3 3.6v-6l21-7 7 6v7l3-3.6V21c0-.564-.043-1.117-.11-1.662" fill="#FF5722"/><path d="M33 28c0 1.106-.895 2-2 2s-2-.894-2-2c0-1.105.895-2 2-2s2 .895 2 2m-14 0c0-1.105-.896-2-2-2-1.106 0-2 .895-2 2 0 1.106.894 2 2 2 1.104 0 2-.894 2-2" fill="#784719"/><path d="M19 37h10s-2 3-5 3-5-3-5-3z" fill="#FFAB91"/></svg>
