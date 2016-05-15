@@ -1,3 +1,12 @@
+:host(.skin-type-icon) {
+  display: block;
+
+  animation-name: swashIn;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+}
+
+
 .c-final-icon {
   display: block;
   text-align: center;

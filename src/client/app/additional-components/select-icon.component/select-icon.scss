@@ -1,3 +1,12 @@
+:host(.select-icon) {
+  display: block;
+
+  animation-name: swashIn;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+}
+
+
 .b-description {
   margin: 3rem auto 0;
 }
