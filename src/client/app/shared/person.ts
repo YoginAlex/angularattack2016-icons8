@@ -55,9 +55,6 @@ export class Person {
       this.sex = SEX.other
     }
 
-    debugger;
-
-
   }
 
   type() {
