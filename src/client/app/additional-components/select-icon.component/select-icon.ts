@@ -14,6 +14,7 @@ import { Person, SvgIcons, SEX, SKIN_TYPE } from "../../shared/person";
 export class SelectIcon {
   @Input() public person:Person;
   @Input() public isWrong;
+  @Input() public isSpecial;
 
   public men: Array;
   public women: Array;

@@ -60,4 +60,13 @@ export class SkinTypeIcon implements OnChanges,  AfterViewInit {
     this._smoothScroll.smoothScroll('iconFace');
   }
 
+  showSelectIcon() {
+    return ((this.isWrong && !this.person.isCorrect)
+      || (this.person.sex === SEX.other || this.person.skinType === SKIN_TYPE.other));
+  }
+  
+  isSpecial() {
+    return (this.person.sex === SEX.other || this.person.skinType === SKIN_TYPE.other);
+  }
+
 }

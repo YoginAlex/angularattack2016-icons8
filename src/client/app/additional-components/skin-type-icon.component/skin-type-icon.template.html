@@ -17,7 +17,7 @@
     </div>
 
     <div
-      *ngIf="!person.isCorrect && !isWrong"
+      *ngIf="!person.isCorrect && !isWrong && !showSelectIcon()"
       class="b-buttons">
       <button class="c-button m-positive" (click)="clickCorrect()">
         Correct
@@ -36,10 +36,11 @@
   </div>
 
   <div
-    *ngIf="isWrong && !person.isCorrect">
+    *ngIf="showSelectIcon()">
     <select-icon
       [person]="person"
-      [isWrong]="isWrong">
+      [isWrong]="isWrong"
+      [isSpecial]="isSpecial()">
     </select-icon>
   </div>
 

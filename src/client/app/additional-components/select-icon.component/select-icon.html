@@ -1,6 +1,14 @@
-<div class="b-description">
+<div
+  class="b-description"
+  *ngIf="!isSpecial">
   Which one then?
 </div>
+<div
+  class="b-description"
+  *ngIf="isSpecial">
+  I have no idea. Which one?
+</div>
+
 
 <div class="b-choose-your">
   <div
