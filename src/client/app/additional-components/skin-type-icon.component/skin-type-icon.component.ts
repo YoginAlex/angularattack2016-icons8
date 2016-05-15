@@ -1,4 +1,4 @@
-import { Component, OnInit,OnChanges, Input } from '@angular/core';
+import { Component, OnInit,OnChanges, Input, AfterViewInit } from '@angular/core';
 import { FORM_DIRECTIVES } from '@angular/common';
 
 import {Score} from "../../shared/scores";
@@ -21,7 +21,7 @@ import {SmoothScroll} from "../../shared/services/smooth-scroll.service";
   directives:[IconFace, SelectIcon, ResultBlock],
   providers: [UploadedImageService]
 })
-export class SkinTypeIcon implements OnChanges {
+export class SkinTypeIcon implements OnChanges,  AfterViewInit {
   @Input() public scores;
   public person: Person;
   public isWrong: Boolean;
@@ -40,7 +40,6 @@ export class SkinTypeIcon implements OnChanges {
   
   ngOnChanges() {
     this.person = new Person(this.scores);
-    this._smoothScroll.smoothScroll('iconFace');
     console.log('this.person', this.person);
   }
 
@@ -56,4 +55,10 @@ export class SkinTypeIcon implements OnChanges {
     this.isWrong = true;
     this.person.isCorrect = false;
   }
+
+
+  ngAfterViewInit(){
+    this._smoothScroll.smoothScroll('iconFace');
+  }
+
 }

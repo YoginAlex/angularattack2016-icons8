@@ -21,18 +21,15 @@ interface FileReaderEvent extends Event {
   styleUrls: [
     'app/additional-components/image-uploader.component/image-uploader.component.css'
   ],
-  providers: [UploadedImageService, ClassifyApi],
-  host: {'class' : 'ng-animate image-uploader'}
+  providers: [UploadedImageService, ClassifyApi]
 })
 export class ImageUploader {
   private imagePreviewUrl:string;
   @Input() public mainImage;
   public isLoad;
 
-  constructor(
-    private uploadedImage:UploadedImageService,
-    private _smoothScroll:SmoothScroll) {
-    
+  constructor(private uploadedImage:UploadedImageService,
+              private _smoothScroll:SmoothScroll) {
   }
 
   uploadImage(image:any) {
@@ -51,6 +48,7 @@ export class ImageUploader {
      // this._smoothScroll.smoothScroll('loaderImage');
       this.mainImage.scores = false;
       this.uploadedImage.upload(image.files[0]).then((scores) => {
+        console.log('scores', scores);
         this.mainImage.scores = scores;
         this.isLoad = false;
       });

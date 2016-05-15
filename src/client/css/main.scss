@@ -1,5 +1,12 @@
 @import "vars";
 
+html,body{
+  scroll-behavior: smooth;
+}
+
+body{
+  //padding-bottom: 1000px !important;
+}
 /* Reset */
 html,
 body,
